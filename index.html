@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jnanesh Bopanna A S — Data Analyst & AI/ML Portfolio</title>
+  <meta name="description"
+    content="Jnanesh Bopanna A S — Data Analyst and AI & ML graduate. Power BI dashboards, machine learning projects, certifications and analytics work.">
+
+  <!-- Google Fonts: Oswald + Source Serif 4 + IBM Plex Mono (Yellow Template fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==============================
+       YELLOW / PARCHMENT DESIGN TOKENS
+       ============================== */
+    :root {
+      --paper: #ECE7D6;
+      --paper-2: #E3DDC7;
+      --paper-3: #F5F0E0;
+      --ink: #152219;
+      --ink-2: #1E3126;
+      --ink-3: #28402F;
+      --turf: #2E6B4A;
+      --turf-deep: #1F4A33;
+      --gold: #C68A2E;
+      --gold-light: #E4A84A;
+      --charcoal: #1B1F1A;
+      --line: #B9AF8E;
+      --cream: #EFE9D8;
+      --rust: #9E3A26;
+      --slate: #4A5568;
+      --max: 1120px;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--charcoal);
+      font-family: 'Source Serif 4', Georgia, serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    .display {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin: 0;
+      line-height: 1.15;
+    }
+
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ==============================
+       UTILITY CLASSES
+       ============================== */
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--turf);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--turf);
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--slate);
+      margin-bottom: 48px;
+      max-width: 640px;
+      font-style: italic;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      background: var(--paper-2);
+      color: var(--ink-3);
+      border: 1px solid var(--line);
+    }
+
+    .tag-gold {
+      background: rgba(198, 138, 46, 0.12);
+      color: var(--gold);
+      border-color: rgba(198, 138, 46, 0.35);
+    }
+
+    .tag-turf {
+      background: rgba(46, 107, 74, 0.1);
+      color: var(--turf-deep);
+      border-color: rgba(46, 107, 74, 0.3);
+    }
+
+    /* ==============================
+       BUTTONS
+       ============================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 22px;
+      border-radius: var(--radius-sm);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      outline: none;
+    }
+
+    .btn-ink {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .btn-ink:hover {
+      background: var(--ink-2);
+      transform: translateY(-2px);
+    }
+
+    .btn-turf {
+      background: var(--turf);
+      color: #FFFFFF;
+    }
+
+    .btn-turf:hover {
+      background: var(--turf-deep);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--line);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--ink);
+      background: rgba(21, 34, 25, 0.06);
+      transform: translateY(-1px);
+    }
+
+    .btn-sm {
+      padding: 7px 14px;
+      font-size: 0.7rem;
+    }
+
+    /* ==============================
+       CARD SURFACE
+       ============================== */
+    .card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      border-color: var(--turf);
+      box-shadow: 0 6px 28px rgba(21, 34, 25, 0.1);
+    }
+
+    .card-paper {
+      background: var(--paper-3);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .card-ink {
+      background: var(--ink);
+      border-radius: var(--radius-md);
+      color: var(--cream);
+    }
+
+    /* ==============================
+       NAVIGATION
+       ============================== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(21, 34, 25, 0.97);
+      border-bottom: 2px solid var(--turf);
+    }
+
+    .nav__inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__brand {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav__brand span {
+      color: var(--gold);
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav__links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(239, 233, 216, 0.7);
+      transition: var(--transition);
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav__links a:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .nav__cta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      background: var(--gold);
+      color: var(--ink);
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .nav__cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    /* ==============================
+       SECTION 9 — LINKS BAR
+       ============================== */
+    .links-strip {
+      background: var(--ink-2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 0;
+    }
+
+    .links-strip__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .link-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 20px;
+      border: 1px solid rgba(239, 233, 216, 0.15);
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.03);
+      transition: var(--transition);
+    }
+
+    .link-strip-item:hover {
+      background: rgba(198, 138, 46, 0.12);
+      border-color: rgba(198, 138, 46, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .link-strip-item i {
+      font-size: 1.15rem;
+      color: var(--gold);
+    }
+
+    .link-strip-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(239, 233, 216, 0.5);
+    }
+
+    .link-strip-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    /* ==============================
+       SECTION 1 — BIO HERO
+       ============================== */
+    .hero {
+      background: var(--ink);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .hero__pattern {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.1;
+      background-image:
+        repeating-linear-gradient(0deg, transparent 0 74px, var(--turf) 74px 75px),
+        repeating-linear-gradient(90deg, transparent 0 74px, rgba(198, 138, 46, 0.2) 74px 75px);
+    }
+
+    .hero__inner {
+      position: relative;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 72px 28px 0;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 56px;
+      align-items: end;
+    }
+
+    .hero__left {
+      padding-bottom: 64px;
+    }
+
+    .hero__eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero__name {
+      font-size: 4.5rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+      color: var(--cream);
+    }
+
+    .hero__title {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 24px;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero__tagline {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(239, 233, 216, 0.8);
+      margin-bottom: 28px;
+      max-width: 580px;
+      border-left: 3px solid var(--gold);
+      padding-left: 18px;
+      line-height: 1.5;
+    }
+
+    .hero__desc {
+      font-size: 1rem;
+      color: rgba(239, 233, 216, 0.7);
+      max-width: 560px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .hero__stats {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .hero__stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .hero__stat-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(239, 233, 216, 0.5);
+      margin-top: 4px;
+    }
+
+    .hero__stat-sep {
+      width: 1px;
+      background: rgba(239, 233, 216, 0.15);
+      align-self: stretch;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero__photo-col {
+      align-self: end;
+      padding-bottom: 0;
+    }
+
+    .hero__photo-frame {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      max-width: 320px;
+      overflow: hidden;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      border: 2px solid var(--gold);
+      border-bottom: none;
+      box-shadow: 0 0 0 6px rgba(198, 138, 46, 0.15);
+    }
+
+    .hero__photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    /* ==============================
+       SECTION 2 — ABOUT SUMMARY
+       ============================== */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-body p {
+      font-size: 1.05rem;
+      color: var(--slate);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .about-body p strong {
+      color: var(--ink);
+    }
+
+    .about-feats {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .about-feat {
+      padding: 20px 22px;
+      border-left: 3px solid var(--turf);
+      background: var(--cream);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .about-feat-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .about-feat-desc {
+      font-size: 0.92rem;
+      color: var(--slate);
+    }
+
+    /* ==============================
+       SECTION 3 — EXPERIENCE
+       ============================== */
+    .exp-block {
+      padding: 36px 40px;
+      position: relative;
+    }
+
+    .exp-block::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--turf), var(--gold));
+      border-radius: 4px 0 0 4px;
+    }
+
+    .exp-role {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .exp-company {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.88rem;
+      color: var(--turf);
+      font-weight: 600;
+      margin-bottom: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    .exp-duration {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--slate);
+      letter-spacing: 0.06em;
+      margin-bottom: 24px;
+    }
+
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .metric-tile {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .metric-tile-val {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--turf);
+      margin-bottom: 4px;
+    }
+
+    .metric-tile-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--slate);
+      line-height: 1.3;
+    }
+
+    .bullet-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--slate);
+      font-size: 1rem;
+    }
+
+    .bullet-list li i {
+      color: var(--turf);
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    /* ==============================
+       SECTION 4 — EDUCATION
+       ============================== */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .edu-card {
+      padding: 28px;
+      border-top: 3px solid var(--turf);
+    }
+
+    .edu-year {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--turf);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .edu-degree {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .edu-inst {
+      font-size: 0.92rem;
+      color: var(--slate);
+      margin-bottom: 12px;
+    }
+
+    .edu-score {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .edu-desc {
+      font-size: 0.88rem;
+      color: var(--slate);
+      font-style: italic;
+    }
+
+    /* ==============================
+       SECTION 5 — PROJECTS
+       ============================== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .project-thumb {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      background: var(--paper-2);
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .project-card:hover .project-thumb img {
+      transform: scale(1.06);
+    }
+
+    .project-thumb-icon {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+
+    .project-body {
+      padding: 24px 28px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--turf);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .project-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--slate);
+      line-height: 1.65;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+
+    .tech-chip {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      padding: 3px 8px;
+      border-radius: 3px;
+      background: rgba(46, 107, 74, 0.08);
+      color: var(--turf-deep);
+      border: 1px solid rgba(46, 107, 74, 0.2);
+    }
+
+    /* ==============================
+       SECTION 6 — DEGREE COMPLETION
+       ============================== */
+    .degree-card {
+      padding: 40px 48px;
+      background: var(--ink);
+      color: var(--cream);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 28px;
+      border: 2px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .degree-card::before {
+      content: 'DEGREE';
+      position: absolute;
+      right: -24px;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-family: 'Oswald', sans-serif;
+      font-size: 5rem;
+      font-weight: 700;
+      color: rgba(198, 138, 46, 0.07);
+      letter-spacing: 0.15em;
+      pointer-events: none;
+    }
+
+    .degree-card-info h3 {
+      font-size: 1.6rem;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .degree-card-info p {
+      font-size: 0.95rem;
+      color: rgba(239, 233, 216, 0.7);
+      max-width: 520px;
+    }
+
+    /* ==============================
+       SECTION 7 — CERTIFICATIONS
+       ============================== */
+    .cert-group {
+      margin-bottom: 52px;
+    }
+
+    .cert-group-head {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--turf);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cert-group-head i {
+      color: var(--turf);
+    }
+
+    .cert-featured {
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-left: 4px solid var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .cert-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .cert-issuer {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--turf);
+      letter-spacing: 0.06em;
+    }
+
+    /* Horizontal scroll swipe */
+    .swipe-row {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold) var(--paper-2);
+    }
+
+    .swipe-row::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    .swipe-row::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 3px;
+    }
+
+    .swipe-tile {
+      flex: 0 0 240px;
+      scroll-snap-align: start;
+      padding: 18px 20px;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: var(--transition);
+    }
+
+    .swipe-tile:hover {
+      border-color: var(--turf);
+      background: var(--cream);
+    }
+
+    .swipe-tile-name {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--ink);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    /* ==============================
+       SECTION 8 — SKILLS
+       ============================== */
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-block {
+      padding: 28px 30px;
+    }
+
+    .skill-block-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--turf-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .skill-pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      padding: 6px 13px;
+      border-radius: var(--radius-sm);
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      color: var(--ink-3);
+      transition: var(--transition);
+    }
+
+    .skill-pill:hover {
+      background: rgba(46, 107, 74, 0.1);
+      border-color: var(--turf);
+      color: var(--ink);
+    }
+
+    .skill-pill.hl {
+      background: rgba(46, 107, 74, 0.1);
+      border-color: var(--turf);
+      color: var(--turf-deep);
+      font-weight: 600;
+      box-shadow: 0 0 0 1px rgba(46, 107, 74, 0.18) inset;
+    }
+
+    /* ==============================
+       SECTION 10 — RESUME SHOWCASE
+       ============================== */
+    .resume-card {
+      padding: 36px 40px;
+    }
+
+    .resume-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .resume-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+
+    .resume-embed {
+      width: 100%;
+      height: 580px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .resume-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ==============================
+       SECTION 11 — OFF THE DASHBOARD
+       ============================== */
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .hobby-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .hobby-img {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .hobby-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .hobby-card:hover .hobby-img img {
+      transform: scale(1.06);
+    }
+
+    .hobby-body {
+      padding: 22px 24px;
+      flex-grow: 1;
+    }
+
+    .hobby-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hobby-trait-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+
+    .hobby-trait {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      padding: 3px 8px;
+      background: rgba(46, 107, 74, 0.08);
+      border: 1px solid rgba(46, 107, 74, 0.2);
+      color: var(--turf-deep);
+      border-radius: 3px;
+    }
+
+    .hobby-desc {
+      font-size: 0.9rem;
+      color: var(--slate);
+      font-style: italic;
+    }
+
+    /* ==============================
+       SECTION 12 — GET IN TOUCH
+       ============================== */
+    .contact-panel {
+      background: var(--ink);
+      border-radius: var(--radius-lg);
+      padding: 60px 56px;
+      position: relative;
+      overflow: hidden;
+      color: var(--cream);
+    }
+
+    .contact-panel::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(198, 138, 46, 0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-headline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+
+    .contact-sub {
+      font-size: 1.1rem;
+      color: rgba(239, 233, 216, 0.75);
+      max-width: 620px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .contact-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(239, 233, 216, 0.1);
+      transition: var(--transition);
+    }
+
+    .contact-row:last-child {
+      border-bottom: none;
+    }
+
+    .contact-row:hover {
+      padding-left: 8px;
+    }
+
+    .contact-row-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: rgba(198, 138, 46, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .contact-row-lbl {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(239, 233, 216, 0.45);
+      margin-bottom: 2px;
+    }
+
+    .contact-row-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.95rem;
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    /* ==============================
+       FOOTER
+       ============================== */
+    .footer {
+      background: var(--ink);
+      color: rgba(239, 233, 216, 0.45);
+      padding: 28px 0;
+      text-align: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* ==============================
+       MODAL VIEWER
+       ============================== */
+    .modal-bg {
+      position: fixed;
+      inset: 0;
+      background: rgba(21, 34, 25, 0.88);
+      backdrop-filter: blur(12px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-bg.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 980px;
+      height: 88vh;
+      background: var(--paper-3);
+      border: 2px solid var(--gold);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 32px 64px rgba(21, 34, 25, 0.5);
+    }
+
+    .modal-bar {
+      padding: 14px 22px;
+      background: var(--ink);
+      border-bottom: 1px solid rgba(198, 138, 46, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-title-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      color: var(--cream);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: rgba(239, 233, 216, 0.6);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover {
+      color: var(--gold);
+    }
+
+    .modal-content {
+      flex-grow: 1;
+      background: var(--ink);
+    }
+
+    .modal-content iframe,
+    .modal-content img {
+      width: 100%;
+      height: 100%;
+      border: none;
+      object-fit: contain;
+    }
+
+    /* ==============================
+       RESPONSIVE
+       ============================== */
+    @media (max-width: 900px) {
+      .hero__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__photo-col {
+        display: none;
+      }
+
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hobbies-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav__links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero__name {
+        font-size: 3rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .contact-headline {
+        font-size: 2.5rem;
+      }
+
+      .contact-panel {
+        padding: 36px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- STICKY NAVIGATION -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <span class="nav__brand">JNANESH<span> BOPANNA</span></span>
+      <div class="nav__links">
+        <a href="#bio">Bio</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#degree">Degree</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#skills">Skills</a>
+        <a href="#resume">Resume</a>
+        <a href="#hobbies">Off Dashboard</a>
+      </div>
+      <!-- Icon Get In Touch → leads to Section 12 at bottom of page -->
+      <a href="#contact" class="nav__cta">
+        <i class="fa-solid fa-paper-plane" style="margin-right: 6px;"></i> Get In Touch
+      </a>
+    </div>
+  </nav>
+
+  <!-- SECTION 9 — LINKS QUICK BAR -->
+  <div class="links-strip">
+    <div class="container">
+      <div class="links-strip__inner">
+        <a href="https://www.linkedin.com/in/jnanesh-bopanna-a-s/" target="_blank" rel="noopener"
+          class="link-strip-item">
+          <i class="fa-brands fa-linkedin"></i>
+          <div>
+            <div class="link-strip-label">LinkedIn</div>
+            <div class="link-strip-val">jnanesh-bopanna-a-s</div>
+          </div>
+        </a>
+        <a href="https://github.com/JnaneshBopannaAS" target="_blank" rel="noopener" class="link-strip-item">
+          <i class="fa-brands fa-github"></i>
+          <div>
+            <div class="link-strip-label">GitHub</div>
+            <div class="link-strip-val">JnaneshBopannaAS</div>
+          </div>
+        </a>
+        <a href="mailto:bopannasomz@gmail.com" class="link-strip-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <div class="link-strip-label">Email</div>
+            <div class="link-strip-val">bopannasomz@gmail.com</div>
+          </div>
+        </a>
+        <a href="tel:+917019158594" class="link-strip-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <div class="link-strip-label">Phone</div>
+            <div class="link-strip-val">+91 7019158594</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 — BIO HERO -->
+  <section id="bio" class="hero">
+    <div class="hero__pattern"></div>
+    <div class="hero__inner">
+      <div class="hero__left">
+        <div class="hero__eyebrow">
+          <i class="fa-solid fa-location-dot"></i> Bengaluru, India &nbsp;·&nbsp; Data Analyst &amp; AI/ML Graduate
+        </div>
+
+        <h1 class="hero__name">JNANESH<br>BOPANNA A S</h1>
+        <div class="hero__title">Data Analyst &amp; AI / ML Engineer</div>
+
+        <p class="hero__tagline">"Trained to read the game. Built to read the data."</p>
+
+        <p class="hero__desc">
+          AI &amp; ML graduate passionate about analytics and emerging Generative AI. Turning raw numbers
+          into interactive dashboards, predictive models, and decisions that stakeholders can act on.
+        </p>
+
+        <div class="hero__stats">
+          <div>
+            <div class="hero__stat-num">8.42</div>
+            <div class="hero__stat-label">CGPA (B.E AI &amp; ML)</div>
+          </div>
+          <div class="hero__stat-sep"></div>
+          <div>
+            <div class="hero__stat-num">4</div>
+            <div class="hero__stat-label">Months Industry XP</div>
+          </div>
+          <div class="hero__stat-sep"></div>
+          <div>
+            <div class="hero__stat-num">11</div>
+            <div class="hero__stat-label">IBM Certifications</div>
+          </div>
+        </div>
+
+        <div class="hero__actions">
+          <!-- Get In Touch icon → leads to Section 12 at bottom of the page -->
+          <a href="#contact" class="btn btn-turf">
+            <i class="fa-solid fa-paper-plane"></i> Get In Touch
+          </a>
+          <a href="#resume" class="btn btn-outline" style="color: var(--cream); border-color: rgba(239,233,216,0.3);">
+            <i class="fa-solid fa-file-pdf"></i> View Resume
+          </a>
+        </div>
+      </div>
+
+      <!-- Profile Picture from Bio Image.jpeg -->
+      <div class="hero__photo-col">
+        <div class="hero__photo-frame">
+          <img src="./Bio Image.jpeg" alt="Jnanesh Bopanna A S — Profile">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — ABOUT SUMMARY -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Analyst by Discipline,<br>Captain by Habit</h2>
+      <p class="section-subtitle">From the pitch to the dashboard — driven by data, defined by leadership.</p>
+
+      <div class="about-layout">
+        <div class="about-body">
+          <p>
+            <strong>Jnanesh Bopanna A S</strong> is an Artificial Intelligence &amp; Machine Learning graduate from
+            Coorg Institute of Technology (CGPA 8.42/10), building a career around data analytics — turning raw numbers
+            into dashboards, models, and decisions people can act on.
+          </p>
+          <p>
+            Experienced in Power BI, SQL &amp; Python. Proven track record with automated dashboards and data-driven
+            decision support. His analytical grounding comes from a Data Analyst internship at <strong>iRobo Automation
+              Pvt Ltd</strong>, where he built Power BI dashboards and automated reporting pipelines across
+            manufacturing, supply chain, and risk management functions, working closely with SQL and Excel.
+          </p>
+          <p>
+            Off the dashboard, he captained his college hockey team to a state championship title — a leader both on and
+            off the field who brings discipline, strategic focus, and teamwork to every analytical endeavor.
+          </p>
+        </div>
+
+        <div class="about-feats">
+          <div class="about-feat">
+            <div class="about-feat-title"><i class="fa-solid fa-chart-column"
+                style="color:var(--turf); margin-right:6px;"></i> End-to-End Analytics</div>
+            <p class="about-feat-desc">From web scraping &amp; SQL extraction to clean visual storytelling in Power BI,
+              IBM Cognos, and Looker Studio.</p>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-title"><i class="fa-solid fa-trophy"
+                style="color:var(--gold); margin-right:6px;"></i> Leadership &amp; Discipline</div>
+            <p class="about-feat-desc">State championship–winning hockey captain with composure under pressure and
+              strategic situational thinking.</p>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-title"><i class="fa-solid fa-wand-magic-sparkles"
+                style="color:var(--turf); margin-right:6px;"></i> GenAI Integration</div>
+            <p class="about-feat-desc">Leveraging LLMs (ChatGPT, Gemini, Claude) to accelerate data cleaning, SQL query
+              generation, and report automation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">Industry Experience</h2>
+      <p class="section-subtitle">Hands-on analytics practice building dashboards and pipelines for real stakeholders.
+      </p>
+
+      <div class="card exp-block">
+        <div class="exp-role">Data Analyst Intern</div>
+        <div class="exp-company"><i class="fa-solid fa-building"></i> &nbsp;iRobo Automation Pvt Ltd</div>
+        <div class="exp-duration"><i class="fa-regular fa-calendar"></i> &nbsp;Feb 2026 – May 2026 &nbsp;·&nbsp; 4
+          Months</div>
+
+        <p style="color:var(--slate); margin-bottom: 0;">
+          Built interactive Power BI dashboards for manufacturing, supply chain, and risk management stakeholders.
+          Automated recurring reporting pipelines and used SQL and Excel to extract, clean, and analyze operational
+          data.
+        </p>
+
+        <div class="metrics-row">
+          <div class="metric-tile">
+            <div class="metric-tile-val">4 Mo</div>
+            <div class="metric-tile-label">Duration</div>
+          </div>
+          <div class="metric-tile">
+            <div class="metric-tile-val">100%</div>
+            <div class="metric-tile-label">Reporting Accuracy</div>
+          </div>
+          <div class="metric-tile">
+            <div class="metric-tile-val">5</div>
+            <div class="metric-tile-label">Major Deliverables</div>
+          </div>
+          <div class="metric-tile">
+            <div class="metric-tile-val">3</div>
+            <div class="metric-tile-label">Core Tools Used</div>
+          </div>
+        </div>
+
+        <ul class="bullet-list">
+          <li><i class="fa-solid fa-circle-check"></i><span>Built interactive Power BI dashboards for manufacturing,
+              supply chain, and risk management stakeholders.</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Automated recurring reporting pipelines, cutting down manual
+              report preparation time significantly.</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Executed complex SQL queries and Excel manipulation to
+              extract, clean, and aggregate operational datasets.</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Ensured 100% reporting accuracy through rigorous data
+              validation and metric cross-referencing.</span></li>
+        </ul>
+
+        <div style="margin-top: 20px;">
+          <!-- Attested PDF — Internship Certificate -->
+          <button
+            onclick="openModal('Internship Certificate — iRobo Automation', './Internship Cert/Internship Certificate.pdf')"
+            class="btn btn-outline">
+            <i class="fa-solid fa-file-pdf" style="color: var(--turf);"></i> View Internship Certificate PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — EDUCATION -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-label">Education</div>
+      <h2 class="section-title">Academic Background</h2>
+      <p class="section-subtitle">AI, Machine Learning, and science foundations built across three institutions.</p>
+
+      <div class="edu-grid">
+        <div class="card edu-card">
+          <div class="edu-year">2022 – 2026</div>
+          <div class="edu-degree">B.E — Artificial Intelligence &amp; Machine Learning</div>
+          <div class="edu-inst">Coorg Institute of Technology</div>
+          <span class="edu-score">8.42 / 10</span>
+          <p class="edu-desc">Coursework and projects spanning machine learning, computer vision, data analytics, and
+            relational databases.</p>
+        </div>
+
+        <div class="card edu-card">
+          <div class="edu-year">2020 – 2022</div>
+          <div class="edu-degree">Pre-University (PCMB)</div>
+          <div class="edu-inst">St. Joseph's Pre University College, Bengaluru</div>
+          <span class="edu-score">83.5%</span>
+          <p class="edu-desc">Rigorous focus on Physics, Chemistry, Mathematics, and Biology with strong analytical
+            foundations.</p>
+        </div>
+
+        <div class="card edu-card">
+          <div class="edu-year">2020</div>
+          <div class="edu-degree">Class 10 — CBSE</div>
+          <div class="edu-inst">St. Joseph's School CBSE, Bengaluru</div>
+          <span class="edu-score">84.2%</span>
+          <p class="edu-desc">Secondary schooling with distinction under the Central Board of Secondary Education
+            curriculum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-label">Projects</div>
+      <h2 class="section-title">Project Showcase</h2>
+      <p class="section-subtitle">Analytics, ML, and engineering projects with images, summaries, and interactive PDF
+        views.</p>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT 1: AI-Based Hand Sign Language Translator -->
+        <div class="card project-card">
+          <div class="project-thumb">
+            <img src="./Projects/AI-Based Hand Sign Language Translator/Screenshot (81).png"
+              alt="AI Sign Language Translator">
+          </div>
+          <div class="project-body">
+            <div class="project-num">01 · Web + AI</div>
+            <div class="project-title">AI-Based Hand Sign Language Translator</div>
+            <p class="project-desc">
+              Real-time web application converting text to sign language animations via WebSockets &amp; sign.mt API.
+              Built with Node.js, Socket.IO and a scalable client-server architecture.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-chip">HTML5/CSS3</span>
+              <span class="tech-chip">Node.js</span>
+              <span class="tech-chip">Socket.IO</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">Docker</span>
+            </div>
+            <button
+              onclick="openModal('AI Sign Language Translator', './Projects/AI-Based Hand Sign Language Translator/Screenshot (81).png', 'image')"
+              class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-image"></i> Gallery View
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: Aarki Analytics Challenge -->
+        <div class="card project-card">
+          <div class="project-thumb">
+            <img src="./Projects/Aarki Analytics Challenge/Screenshot (120).png" alt="Aarki Analytics Challenge">
+          </div>
+          <div class="project-body">
+            <div class="project-num">02 · Power BI</div>
+            <div class="project-title">Aarki Analytics Challenge</div>
+            <p class="project-desc">
+              End-to-end marketing analytics on 3,021 valid leads ($90.6K revenue). Built 3 interactive Power BI
+              dashboards with KPI monitoring, funnel visualization, geographic analysis, and a What-If Scenario
+              Simulator.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-chip">Power BI</span>
+              <span class="tech-chip">Marketing Analytics</span>
+              <span class="tech-chip">What-If Simulator</span>
+            </div>
+            <button
+              onclick="openModal('Aarki Analytics Dashboard', './Projects/Aarki Analytics Challenge/Screenshot (120).png', 'image')"
+              class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-image"></i> View Dashboards
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: Advanced Excel -->
+        <div class="card project-card">
+          <div class="project-thumb">
+            <div class="project-thumb-icon" style="background: rgba(46,107,74,0.08);">
+              <i class="fa-solid fa-file-excel" style="color: var(--turf);"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-num">03 · Excel</div>
+            <div class="project-title">Enterprise Revenue &amp; Margin Analysis</div>
+            <p class="project-desc">
+              Synthesized $78.4M in total profit and 58K+ units sold across 10+ global metropolitan hubs (London,
+              Toronto, Miami). Analyzed profit margins across computers, home office, and kitchen appliances.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-chip">Microsoft Excel</span>
+              <span class="tech-chip">Pivot Tables</span>
+              <span class="tech-chip">VLOOKUP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: CNN Sign Language -->
+        <div class="card project-card">
+          <div class="project-thumb">
+            <div class="project-thumb-icon" style="background: rgba(158,58,38,0.07);">
+              <i class="fa-solid fa-brain" style="color: var(--rust);"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-num">04 · Deep Learning</div>
+            <div class="project-title">Sign Language Detection (CNN)</div>
+            <p class="project-desc">
+              Real-time gesture recognition using TensorFlow &amp; OpenCV. Trained CNN model classifies webcam hand
+              gestures and translates them to on-screen text instantly.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">TensorFlow/Keras</span>
+              <span class="tech-chip">OpenCV</span>
+              <span class="tech-chip">CNN</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: Stack Overflow Survey -->
+        <div class="card project-card">
+          <div class="project-thumb">
+            <div class="project-thumb-icon" style="background: rgba(198,138,46,0.08);">
+              <i class="fa-solid fa-chart-bar" style="color: var(--gold);"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-num">05 · Looker Studio</div>
+            <div class="project-title">Stack Overflow Developer Survey Dashboard</div>
+            <p class="project-desc">
+              Google Looker Studio interactive dashboard analyzing technology adoption, cloud preferences (AWS/Azure),
+              web frameworks, and global developer demographics across 41.3% aged 25–34.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-chip">Google Looker Studio</span>
+              <span class="tech-chip">Data Viz</span>
+              <span class="tech-chip">Demographics</span>
+            </div>
+            <button
+              onclick="openModal('Stack Overflow Dashboard — Looker Studio', './Projects/Stack Overflow Developer Survey/DA ProDash GoogleLooker.pdf')"
+              class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-file-pdf"></i> View Looker Dashboard PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJECT 6: Stock Financial Extraction -->
+        <div class="card project-card">
+          <div class="project-thumb">
+            <div class="project-thumb-icon" style="background: rgba(21,34,25,0.06);">
+              <i class="fa-solid fa-arrow-trend-up" style="color: var(--ink);"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-num">06 · Python / Scraping</div>
+            <div class="project-title">Stock Financial Extraction Engine</div>
+            <p class="project-desc">
+              End-to-end Python pipeline using BeautifulSoup, yfinance and Matplotlib for Tesla (TSLA) and GameStop
+              (GME) — extracting real-time metrics and generating dual-axis correlation graphs.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">BeautifulSoup</span>
+              <span class="tech-chip">yfinance</span>
+              <span class="tech-chip">Matplotlib</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 7: Technology Usage Dashboard (Cognos) -->
+        <div class="card project-card">
+          <div class="project-thumb">
+            <div class="project-thumb-icon" style="background: rgba(46,107,74,0.08);">
+              <i class="fa-solid fa-cubes" style="color: var(--turf);"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-num">07 · IBM Cognos</div>
+            <div class="project-title">Technology Usage Dashboard (Cognos)</div>
+            <p class="project-desc">
+              Multi-page IBM Cognos Analytics dashboard presenting developer trends via bar charts, treemaps, scatter
+              plots, and pie charts — PostgreSQL leading with ~1.3K future interest responses.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-chip">IBM Cognos Analytics</span>
+              <span class="tech-chip">Treemaps</span>
+              <span class="tech-chip">Scatter Plots</span>
+            </div>
+            <button
+              onclick="openModal('Technology Usage Dashboard — IBM Cognos', './Projects/Technology Usage Dashboard/DAProj Cognos.pdf')"
+              class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-file-pdf"></i> View Cognos Dashboard PDF
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — DEGREE COMPLETION -->
+  <section id="degree" class="section">
+    <div class="container">
+      <div class="section-label">Degree</div>
+      <h2 class="section-title">Degree Completion</h2>
+      <p class="section-subtitle">Official degree document issued by Visvesvaraya Technological University (VTU).</p>
+
+      <div class="degree-card">
+        <div class="degree-card-info">
+          <span class="tag tag-gold" style="margin-bottom: 14px;"><i class="fa-solid fa-certificate"></i> Official
+            Document Attested</span>
+          <h3>B.E — Artificial Intelligence &amp; Machine Learning</h3>
+          <p>
+            Provisional Degree Certificate / PUG document issued by VTU confirming successful completion of the B.E
+            degree in Artificial Intelligence &amp; Machine Learning from Coorg Institute of Technology (2022–2026).
+            CGPA: 8.42/10.
+          </p>
+        </div>
+        <!-- Attested PDF: VTUDOC_WLCYAH_4CI22AI017_PUG.pdf -->
+        <button onclick="openModal('VTU Degree Completion Certificate', './VTUDOC_WLCYAH_4CI22AI017_PUG.pdf')"
+          class="btn btn-turf" style="flex-shrink:0;">
+          <i class="fa-solid fa-file-pdf"></i> View Degree Certificate PDF
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 — CERTIFICATIONS & LEARNING -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <div class="section-label">Certifications</div>
+      <h2 class="section-title">Certifications &amp; Learning</h2>
+      <p class="section-subtitle">Professional credentials from IBM, UC Davis, and Infosys.</p>
+
+      <!-- 1. IBM Data Analyst Professional Certificate -->
+      <div class="cert-group">
+        <div class="cert-group-head">
+          <i class="fa-solid fa-shield-halved"></i> 1. IBM Data Analyst Professional Certificate
+        </div>
+
+        <div class="card-paper cert-featured">
+          <div>
+            <span class="tag tag-turf" style="margin-bottom: 8px;">Main Specialization</span>
+            <div class="cert-name">IBM Data Analyst Professional Certificate</div>
+            <div class="cert-issuer">IBM — Coursera · 11-Course Specialization</div>
+          </div>
+          <!-- Main PDF view: IBM-Data Analyst Professional Certificate.pdf -->
+          <button
+            onclick="openModal('IBM Data Analyst Professional Certificate', './IBM Data Analyst Professional Certificate/IBM-Data Analyst Professional Certificate.pdf')"
+            class="btn btn-turf">
+            <i class="fa-solid fa-file-pdf"></i> View Main Certificate PDF
+          </button>
+        </div>
+
+        <p class="mono"
+          style="font-size: 0.7rem; color: var(--slate); margin-bottom: 10px; letter-spacing: 0.06em; text-transform: uppercase;">
+          <i class="fa-solid fa-sliders"></i> &nbsp;Scroll / Swipe — All 10 Specialization Course Certificates:
+        </p>
+        <div class="swipe-row">
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Data Analysis with Python</div>
+            <button
+              onclick="openModal('IBM Data Analysis with Python', './IBM Data Analyst Professional Certificate/IBM-Data Analysis with Python.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Data Analyst Capstone Project</div>
+            <button
+              onclick="openModal('IBM Data Analyst Capstone Project', './IBM Data Analyst Professional Certificate/IBM-Data Analyst Capstone Project.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Data Visualization &amp; Dashboards (Excel &amp; Cognos)</div>
+            <button
+              onclick="openModal('IBM Data Visualization Dashboards', './IBM Data Analyst Professional Certificate/IBM-Data Visualization and Dashboards with Excel and Cognos.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Data Visualization with Python</div>
+            <button
+              onclick="openModal('IBM Data Visualization with Python', './IBM Data Analyst Professional Certificate/IBM-Data Visualization with Python.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Databases &amp; SQL for Data Science</div>
+            <button
+              onclick="openModal('IBM Databases and SQL for Data Science', './IBM Data Analyst Professional Certificate/IBM-Databases and SQL for Data Science with Python.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Excel Basics for Data Analysis</div>
+            <button
+              onclick="openModal('IBM Excel Basics for Data Analysis', './IBM Data Analyst Professional Certificate/IBM-Excel Basics for Data Analysis.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Generative AI for Data Analytics</div>
+            <button
+              onclick="openModal('IBM Generative AI for Data Analytics', './IBM Data Analyst Professional Certificate/IBM-Generative AI for Data Analytics.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Introduction to Data Analytics</div>
+            <button
+              onclick="openModal('IBM Introduction to Data Analytics', './IBM Data Analyst Professional Certificate/IBM-Introduction to Data Analytics.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Python Project for Data Science</div>
+            <button
+              onclick="openModal('IBM Python Project for Data Science', './IBM Data Analyst Professional Certificate/IBM-Python Project for Data Science.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Python for Data Science, AI &amp; Development</div>
+            <button
+              onclick="openModal('IBM Python for Data Science AI & Dev', './IBM Data Analyst Professional Certificate/IBM-Python for Data Science, AI & Development.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. UCDAVIS SQL for Data Science -->
+      <div class="cert-group">
+        <div class="cert-group-head">
+          <i class="fa-solid fa-database"></i> 2. UCDAVIS — SQL for Data Science
+        </div>
+        <div class="card-paper cert-featured">
+          <div>
+            <div class="cert-name">UCDAVIS — SQL for Data Science</div>
+            <div class="cert-issuer">University of California, Davis · Coursera</div>
+          </div>
+          <button onclick="openModal('UCDAVIS SQL for Data Science', './SQL for DS/UCDAVIS-SQL for Data Science.pdf')"
+            class="btn btn-outline">
+            <i class="fa-solid fa-file-pdf"></i> View Certificate PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Infosys AI Foundational Certificate -->
+      <div class="cert-group">
+        <div class="cert-group-head">
+          <i class="fa-solid fa-brain"></i> 3. Infosys AI Foundational Certificate
+        </div>
+        <div class="card-paper cert-featured">
+          <div>
+            <span class="tag tag-turf" style="margin-bottom: 8px;">Main Certificate</span>
+            <div class="cert-name">Infosys — Foundation Certificate</div>
+            <div class="cert-issuer">Infosys Springboard AI Foundational Program</div>
+          </div>
+          <button
+            onclick="openModal('Infosys Foundation Certificate', './Infosys AI Foundational Certificate/Infosys-Foundation Certificate.pdf')"
+            class="btn btn-turf">
+            <i class="fa-solid fa-file-pdf"></i> View Main Certificate PDF
+          </button>
+        </div>
+
+        <div class="swipe-row" style="margin-top: 14px;">
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Infosys — Artificial Intelligence</div>
+            <button
+              onclick="openModal('Infosys Artificial Intelligence', './Infosys AI Foundational Certificate/Infosys-Artificial Intelligence.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Infosys — Deep Learning</div>
+            <button
+              onclick="openModal('Infosys Deep Learning', './Infosys AI Foundational Certificate/Infosys-Deep Learning.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+          <div class="swipe-tile">
+            <div class="swipe-tile-name">Infosys — Natural Language Processing (NLP)</div>
+            <button onclick="openModal('Infosys NLP', './Infosys AI Foundational Certificate/Infosys-NLP.pdf')"
+              class="btn btn-outline btn-sm">View PDF</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 8 — SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-label">Skills</div>
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skills-layout">
+
+        <div class="card skill-block">
+          <div class="skill-block-label"><i class="fa-solid fa-chart-line"></i> Data Analytics</div>
+          <div class="skill-pills">
+            <span class="skill-pill hl">Data Analytics</span>
+            <span class="skill-pill hl">Data Cleaning</span>
+            <span class="skill-pill">Preprocessing</span>
+            <span class="skill-pill hl">Anomaly Detection</span>
+            <span class="skill-pill">Trend Analysis</span>
+            <span class="skill-pill hl">KPI Tracking</span>
+          </div>
+        </div>
+
+        <div class="card skill-block">
+          <div class="skill-block-label"><i class="fa-solid fa-database"></i> Database &amp; Querying</div>
+          <div class="skill-pills">
+            <span class="skill-pill hl">SQL (RDBMS)</span>
+            <span class="skill-pill hl">Complex Joins</span>
+            <span class="skill-pill">Data Aggregation</span>
+            <span class="skill-pill">MySQL</span>
+            <span class="skill-pill">SQLite</span>
+          </div>
+        </div>
+
+        <div class="card skill-block">
+          <div class="skill-block-label"><i class="fa-solid fa-chart-column"></i> Data Visualization &amp; BI</div>
+          <div class="skill-pills">
+            <span class="skill-pill hl">Power BI</span>
+            <span class="skill-pill hl">Tableau</span>
+            <span class="skill-pill hl">IBM Cognos</span>
+            <span class="skill-pill">Google Looker Studio</span>
+            <span class="skill-pill hl">AI-Powered Dashboards</span>
+          </div>
+        </div>
+
+        <div class="card skill-block">
+          <div class="skill-block-label"><i class="fa-solid fa-wand-magic-sparkles"></i> Generative AI for Analytics
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill hl">ChatGPT</span>
+            <span class="skill-pill hl">Claude AI</span>
+            <span class="skill-pill hl">Google Gemini</span>
+            <span class="skill-pill">Microsoft Copilot</span>
+            <span class="skill-pill">Tomat AI</span>
+            <span class="skill-pill hl">SQL Through AI</span>
+            <span class="skill-pill">Perplexity AI</span>
+            <span class="skill-pill hl">AI Report Generation</span>
+          </div>
+        </div>
+
+        <div class="card skill-block">
+          <div class="skill-block-label"><i class="fa-brands fa-python"></i> Programming &amp; ML</div>
+          <div class="skill-pills">
+            <span class="skill-pill hl">Python (Pandas, NumPy, Matplotlib)</span>
+            <span class="skill-pill">C Language</span>
+            <span class="skill-pill hl">Machine Learning</span>
+            <span class="skill-pill hl">Artificial Intelligence</span>
+          </div>
+        </div>
+
+        <div class="card skill-block">
+          <div class="skill-block-label"><i class="fa-solid fa-table"></i> Spreadsheets &amp; Productivity</div>
+          <div class="skill-pills">
+            <span class="skill-pill hl">Microsoft Excel (Pivot Tables, VLOOKUP)</span>
+            <span class="skill-pill">Google Sheets</span>
+          </div>
+        </div>
+
+        <div class="card skill-block" style="grid-column: 1 / -1;">
+          <div class="skill-block-label"><i class="fa-solid fa-users"></i> Soft Skills &amp; Leadership</div>
+          <div class="skill-pills">
+            <span class="skill-pill hl">Problem Solving</span>
+            <span class="skill-pill hl">Critical Thinking</span>
+            <span class="skill-pill">Technical Communication</span>
+            <span class="skill-pill hl">Data-Driven Strategy</span>
+            <span class="skill-pill">Cross-Functional Collaboration</span>
+            <span class="skill-pill hl">Team Leadership</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10 — RESUME SHOWCASE -->
+  <section id="resume" class="section">
+    <div class="container">
+      <div class="section-label">Resume</div>
+      <h2 class="section-title">Resume</h2>
+      <p class="section-subtitle">View or download the full resume formatted for Data Analyst roles.</p>
+
+      <div class="card resume-card">
+        <div class="resume-header">
+          <div>
+            <div class="resume-title">Jnanesh Bopanna A S — Resume</div>
+            <p style="color: var(--slate); font-size: 0.9rem; margin-top: 4px;">Updated PDF — formatted for Data Analyst
+              &amp; AI engineering roles.</p>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="./Resume - JNANESH BOPANNA A S.pdf" download class="btn btn-ink">
+              <i class="fa-solid fa-download"></i> Download Resume PDF
+            </a>
+            <button onclick="openModal('Jnanesh Bopanna — Resume', './Resume - JNANESH BOPANNA A S.pdf')"
+              class="btn btn-outline">
+              <i class="fa-solid fa-expand"></i> Full Screen View
+            </button>
+          </div>
+        </div>
+
+        <div class="resume-embed">
+          <iframe src="./Resume - JNANESH BOPANNA A S.pdf#toolbar=0" title="Jnanesh Bopanna Resume"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11 — OFF THE DASHBOARD (HOBBIES) -->
+  <section id="hobbies" class="section">
+    <div class="container">
+      <div class="section-label">Off the Dashboard</div>
+      <h2 class="section-title">Off the Dashboard</h2>
+      <p class="section-subtitle">Athletic discipline, competitive sports, and relentless curiosity in AI tools.</p>
+
+      <div class="hobbies-grid">
+
+        <!-- Hobby 1: Hockey -->
+        <div class="card hobby-card">
+          <div class="hobby-img">
+            <img src="./hobbies/WhatsApp Image 2026-08-06 at 16.38.14.jpeg" alt="Hockey Captaincy">
+          </div>
+          <div class="hobby-body">
+            <div class="hobby-title">
+              <i class="fa-solid fa-shield" style="color: var(--turf);"></i> Hockey
+            </div>
+            <div class="hobby-trait-row">
+              <span class="hobby-trait">Teamwork</span>
+              <span class="hobby-trait">Leadership</span>
+              <span class="hobby-trait">Discipline</span>
+              <span class="hobby-trait">Strategic Thinking</span>
+            </div>
+            <p class="hobby-desc">
+              Captained his college hockey team to a state championship title — building sharp situational awareness,
+              high-pressure composure, and the captaincy habits that translate directly to leading data projects.
+            </p>
+          </div>
+        </div>
+
+        <!-- Hobby 2: Football -->
+        <div class="card hobby-card">
+          <div class="hobby-img">
+            <img src="./hobbies/WhatsApp Image 2026-08-06 at 18.12.53.jpeg" alt="Football">
+          </div>
+          <div class="hobby-body">
+            <div class="hobby-title">
+              <i class="fa-solid fa-futbol" style="color: var(--gold);"></i> Football
+            </div>
+            <div class="hobby-trait-row">
+              <span class="hobby-trait">Tactical Execution</span>
+              <span class="hobby-trait">Team Synergy</span>
+              <span class="hobby-trait">Stamina</span>
+            </div>
+            <p class="hobby-desc">
+              Passionate football player applying field vision, spatial awareness, and quick tactical decision-making to
+              data pipeline architecture and collaborative team environments.
+            </p>
+          </div>
+        </div>
+
+        <!-- Hobby 3: Learning AI & GenAI Tools -->
+        <div class="card hobby-card">
+          <div class="hobby-img">
+            <img src="./hobbies/WhatsApp Image 2026-08-06 at 16.40.50.jpeg" alt="Learning AI and Gen AI Tools">
+          </div>
+          <div class="hobby-body">
+            <div class="hobby-title">
+              <i class="fa-solid fa-microchip" style="color: var(--rust);"></i> Learning AI &amp; GenAI Tools
+            </div>
+            <div class="hobby-trait-row">
+              <span class="hobby-trait">LLMs &amp; Agents</span>
+              <span class="hobby-trait">AI SQL Generation</span>
+              <span class="hobby-trait">Prompt Engineering</span>
+            </div>
+            <p class="hobby-desc">
+              Continuously testing cutting-edge GenAI tools — ChatGPT, Gemini, Claude, Tomat AI — to automate data
+              cleaning, query generation, and interactive dashboard storytelling.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12 — GET IN TOUCH -->
+  <section id="contact" class="section" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Get In Touch</h2>
+
+      <div class="contact-panel">
+        <div class="contact-headline">Let's Talk Data</div>
+        <p class="contact-sub">
+          Open to Data Analyst roles and analytics-driven teams. Reach out or grab the resume in full picture — let's
+          build something data-driven together.
+        </p>
+
+        <div class="contact-actions">
+          <!-- Resume Download -->
+          <a href="./Resume - JNANESH BOPANNA A S.pdf" download class="btn btn-turf">
+            <i class="fa-solid fa-download"></i> Download Full Resume
+          </a>
+          <a href="mailto:bopannasomz@gmail.com" class="btn btn-outline"
+            style="color: var(--cream); border-color: rgba(239,233,216,0.3);">
+            <i class="fa-solid fa-paper-plane"></i> Send Direct Email
+          </a>
+        </div>
+
+        <div class="contact-rows">
+          <a href="mailto:bopannasomz@gmail.com" class="contact-row">
+            <div class="contact-row-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="contact-row-lbl">Email</div>
+              <div class="contact-row-val">bopannasomz@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+917019158594" class="contact-row">
+            <div class="contact-row-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="contact-row-lbl">Phone</div>
+              <div class="contact-row-val">+91 7019158594</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/jnanesh-bopanna-a-s/" target="_blank" rel="noopener" class="contact-row">
+            <div class="contact-row-icon"><i class="fa-brands fa-linkedin"></i></div>
+            <div>
+              <div class="contact-row-lbl">LinkedIn</div>
+              <div class="contact-row-val">linkedin.com/in/jnanesh-bopanna-a-s</div>
+            </div>
+          </a>
+          <a href="https://github.com/JnaneshBopannaAS" target="_blank" rel="noopener" class="contact-row">
+            <div class="contact-row-icon"><i class="fa-brands fa-github"></i></div>
+            <div>
+              <div class="contact-row-lbl">GitHub</div>
+              <div class="contact-row-val">github.com/JnaneshBopannaAS</div>
+            </div>
+          </a>
+          <div class="contact-row">
+            <div class="contact-row-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="contact-row-lbl">Location</div>
+              <div class="contact-row-val">Bengaluru, India</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Jnanesh Bopanna A S &nbsp;·&nbsp; Data Analyst &amp; AI/ML Engineer &nbsp;·&nbsp; Bengaluru, India</p>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE MODAL VIEWER -->
+  <div id="modalBg" class="modal-bg">
+    <div class="modal-box">
+      <div class="modal-bar">
+        <span id="modalTitleText" class="modal-title-text">Document View</span>
+        <button onclick="closeModal()" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, src, type = 'pdf') {
+      const bg = document.getElementById('modalBg');
+      const titleEl = document.getElementById('modalTitleText');
+      const content = document.getElementById('modalContent');
+      titleEl.innerText = title;
+      if (type === 'image') {
+        content.innerHTML = `<img src="${src}" alt="${title}" style="width:100%;height:100%;object-fit:contain;background:#1B1F1A;">`;
+      } else {
+        content.innerHTML = `<iframe src="${src}" title="${title}"></iframe>`;
+      }
+      bg.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const bg = document.getElementById('modalBg');
+      document.getElementById('modalContent').innerHTML = '';
+      bg.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    document.getElementById('modalBg').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+</body>
+
+</html>
